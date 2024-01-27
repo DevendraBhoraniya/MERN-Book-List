@@ -11,6 +11,7 @@ import BooksCard from "../components/Home/BooksCard"
 
 import { PiBookOpenTextLight } from 'react-icons/pi';
 import { BiUserCircle } from 'react-icons/bi';
+import { HOST } from '../utils/api';
 
 
 
@@ -22,7 +23,7 @@ const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get('http://localhost:5555/books')
+    axios.get(`${HOST}/books`)
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
